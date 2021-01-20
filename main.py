@@ -10,7 +10,7 @@ screen.tracer(0)
 
 paddle1 = Paddle(350)
 paddle2 = Paddle(-350)
-time.sleep(0.1)
+time.sleep(0.1) # The screen delay is displayed after 0.1s and then refresh the screen.
 
 screen.update()
 screen.exitonclick()
