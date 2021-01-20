@@ -10,7 +10,16 @@ screen.tracer(0)
 
 paddle1 = Paddle(350)
 paddle2 = Paddle(-350)
-time.sleep(0.1) # The screen delay is displayed after 0.1s and then refresh the screen.
 
-screen.update()
+screen.listen()
+screen.onkeypress(paddle2.go_up, "w")
+screen.onkeypress(paddle2.go_down, "s")
+screen.onkeypress(paddle1.go_up, "Up")
+screen.onkeypress(paddle1.go_down, "Down")
+
+game_is_on = True
+while game_is_on:
+    screen.update()
+    time.sleep(0.1)  # The screen delay is displayed after 0.1s and then refresh the screen.
+
 screen.exitonclick()
