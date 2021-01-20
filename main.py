@@ -1,6 +1,5 @@
 from turtle import Screen, Turtle
 from paddle import Paddle
-import time
 
 screen = Screen()
 screen.title("THE PONG GAME")
@@ -20,6 +19,5 @@ screen.onkeypress(r_paddle.go_down, "Down")
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(0.1)  # The screen delay is displayed after 0.1s and then refresh the screen.
 
 screen.exitonclick()
