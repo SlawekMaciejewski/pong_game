@@ -7,11 +7,11 @@ class Paddle(Turtle):
         self.create_paddle(position_x)
 
     def create_paddle(self, position_x):
-        new_paddle = Turtle(shape="square")
-        new_paddle.color("white")
-        new_paddle.shapesize(stretch_len=1, stretch_wid=5)
-        new_paddle.penup()
-        new_paddle.goto(position_x, 0)
+        self.shape("square")
+        self.color("white")
+        self.shapesize(stretch_len=1, stretch_wid=5)
+        self.penup()
+        self.goto(position_x, 0)
 
     def go_up(self):
         new_y = self.ycor() + 20

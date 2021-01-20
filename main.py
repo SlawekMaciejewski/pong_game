@@ -8,14 +8,14 @@ screen.setup(width=800, height=600)
 screen.bgcolor("black")
 screen.tracer(0)
 
-paddle1 = Paddle(350)
-paddle2 = Paddle(-350)
+r_paddle = Paddle(350)
+l_paddle = Paddle(-350)
 
 screen.listen()
-screen.onkeypress(paddle2.go_up, "w")
-screen.onkeypress(paddle2.go_down, "s")
-screen.onkeypress(paddle1.go_up, "Up")
-screen.onkeypress(paddle1.go_down, "Down")
+screen.onkeypress(l_paddle.go_up, "w")
+screen.onkeypress(l_paddle.go_down, "s")
+screen.onkeypress(r_paddle.go_up, "Up")
+screen.onkeypress(r_paddle.go_down, "Down")
 
 game_is_on = True
 while game_is_on:
