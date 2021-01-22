@@ -1,6 +1,7 @@
 from turtle import Screen
 from ball import Ball
 from paddle import Paddle
+from scoreboard import Scoreboard
 import time
 
 screen = Screen()
@@ -12,6 +13,7 @@ screen.tracer(0)
 r_paddle = Paddle(position_x=350)
 l_paddle = Paddle(position_x=-350)
 
+scoreboard = Scoreboard()
 ball = Ball()
 
 screen.listen()
@@ -34,11 +36,12 @@ while game_is_on:
     # Detect when the R paddle misses
     if ball.xcor() > 380:
         ball.home()
+        scoreboard.increase_l_score()
         ball.bounce_x()
     # Detect when the L paddle misses
     if ball.xcor() < -380:
         ball.home()
+        scoreboard.increase_r_score()
         ball.bounce_x()
-
 
 screen.exitonclick()
