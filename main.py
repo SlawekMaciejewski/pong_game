@@ -24,7 +24,7 @@ screen.onkeypress(r_paddle.go_down, "Down")
 
 game_is_on = True
 while game_is_on:
-    time.sleep(0.1)
+    time.sleep(ball.move_speed)
     screen.update()
     ball.move()
     # Detect collision with the wall
@@ -35,13 +35,11 @@ while game_is_on:
         ball.bounce_x()
     # Detect when the R paddle misses
     if ball.xcor() > 380:
-        ball.home()
+        ball.reset_position()
         scoreboard.increase_l_score()
-        ball.bounce_x()
     # Detect when the L paddle misses
     if ball.xcor() < -380:
-        ball.home()
+        ball.reset_position()
         scoreboard.increase_r_score()
-        ball.bounce_x()
 
 screen.exitonclick()
